@@ -1,0 +1,31 @@
+{
+  "name": "cierre-viajes_backend",
+  "version": "1.0.0",
+  "description": "\"\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:ui": "rm -rf dist && cd ../cierre-viajes && npm run build && cp -r dist ../cierre-viajes_backend",
+    "deploy": "flyctl deploy",
+    "deploy:full": "npm run build:ui && npm run deploy",
+    "logs:prod": "fly logs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Cast3c/cierre-viajes_backend.git"
+  },
+  "author": "castec",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "moongose": "^1.0.0",
+    "morgan": "^1.10.1"
+  },
+  "devDependencies": {
+    "@flydotio/dockerfile": "^0.7.10"
+  }
+}
