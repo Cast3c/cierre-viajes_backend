@@ -24,15 +24,15 @@ const viajeSchema = new mongoose.Schema({
 
 const Viaje = mongoose.model('Viaje', viajeSchema)
 
-const viaje = new Viaje({
-    estado: 'completado',
-    fecha: new Date(),
-    origen: 'Bogota',
-    destino: 'Medellin',
-    conductor: 'Juan Perez',
-    vehiculo: 'ABC123',
-    flete: 1500000
-})
+// const viaje = new Viaje({
+//     estado: 'completado',
+//     fecha: new Date(),
+//     origen: 'Bogota',
+//     destino: 'Medellin',
+//     conductor: 'Juan Perez',
+//     vehiculo: 'ABC123',
+//     flete: 1500000
+// })
 
 // viaje.save().then(result => {
 //     console.log('Viaje saved!')
