@@ -33,8 +33,7 @@ project-root/
 ├── index.js          # Punto de entrada del servidor
 ├── package.json      # Dependencias y scripts
 └── README.md         # Documentación del proyecto
-
-
+```
 ---
 
 ## ⚙️ Instalación
