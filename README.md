@@ -20,18 +20,20 @@ Compatible con Windows, Linux y macOS.
 
 ---
 
-## 📂 Estructura del proyecto
+## Estructura del Proyecto
 
+```plaintext
 project-root/
-├── controllers/ ->(# Lógica para manejar las solicitudes HTTP)
-├── services/    ->(# Lógica de negocio y conexión con la capa de datos)
-├── utils/       ->(# Funciones auxiliares (ej. generador de IDs))
-├── routes/      ->(# Definición de rutas API)
-├── middlewares/ ->(# Middlewares personalizados)
-├── config/      ->(# Configuración y variables de entorno)
-├── index.js     ->(# Punto de entrada del servidor)
-├── package.json ->(# Dependencias y scripts)
-└── README.md
+├── controllers/      # Lógica para manejar las solicitudes HTTP
+├── services/         # Lógica de negocio y conexión con la capa de datos
+├── utils/            # Funciones auxiliares (ej. generador de IDs)
+├── routes/           # Definición de rutas API
+├── middlewares/      # Middlewares personalizados
+├── config/           # Configuración y variables de entorno
+├── index.js          # Punto de entrada del servidor
+├── package.json      # Dependencias y scripts
+└── README.md         # Documentación del proyecto
+
 
 ---
 
