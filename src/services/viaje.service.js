@@ -1,3 +1,4 @@
+const { generateId } = require('../utils/idGen')
 const Viaje = require('../models/viaje.model')
 
 const getAllViajes = async () => {
@@ -9,7 +10,9 @@ const getViaje = async (id) => {
 }
 
 const createViaje = async (data) => {
-    return await Viaje.create(data)
+    const _id = generateId(data);
+    const viajeComplete = new Viaje({...data, _id});
+    return await Viaje.create(viajeComplete)
 }
 
 const updateViaje = async (id,data) => {

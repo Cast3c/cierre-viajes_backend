@@ -12,7 +12,7 @@ const generateId = (data) => {
     const date =  (data.fecha).replace(/-/gi, '');
     const orig = strConv(data.origen)
     const dest = strConv(data.destino)
-    const veh =  (data.placa).includes('-')?(data.placa).replace(/-/gi, ''):(data.placa);
+    const veh =  (data.vehiculo).includes('-')?(data.vehiculo).replace(/-/gi, ''):(data.vehiculo);
     const newId =  `${date}-${orig}-${dest}-${veh}`;
     return (
         newId.toUpperCase()
