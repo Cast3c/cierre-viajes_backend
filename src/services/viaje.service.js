@@ -16,7 +16,7 @@ const createViaje = async (data) => {
 }
 
 const updateViaje = async (id,data) => {
-    return await Viaje.findByIdAndUpdate(id, data)
+    return await Viaje.findByIdAndUpdate(id, data, {new:true, runValidators: true})
 }
 
 const deleteViaje = async (id) => {

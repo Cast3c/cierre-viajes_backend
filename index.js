@@ -1,8 +1,8 @@
 require('dotenv').config()
-const { generateId } = require('./utils/idGen')
+const { generateId } = require('./src/utils/idGen')
 
 const express = require('express');
-const Viaje = require('./models/viaje')// Import the Viaje model
+const Viaje = require('./src/models/viaje.model')// Import the Viaje model
 
 const morgan = require('morgan');
 const cors = require('cors');
@@ -65,7 +65,6 @@ app.delete('/api/viajes/:id', (request, response) => {
 
     response.status(204).end()
 })
-
 
 app.post('/api/viajes', (request, response) => {
 

@@ -11,7 +11,18 @@ const getViajes = async (req, res) => {
 
 const getViaje = async (req, res) => {
     try{
-        const viaje = await viajeService.getViaje(req.params.id);
+        const { id } = req.params
+
+        // if(!id.match(/^\d{8}-[A-Z]{n}$/)){
+        //     return res.status(400).json({ message: "ID inválido", id })
+        // }
+
+        const viaje = await viajeService.getViaje(id);
+
+        if(!viaje){
+            return res.status(404).json({ message: "Viaje no encontrado" })
+        }
+
         res.json(viaje)
     }catch(error){
         res.status(500).json( {message: error.message })
@@ -32,11 +43,12 @@ const updtViajeClientes = async (req, res) => {
         const viaje = await viajeService.updateViaje(
             req.params.id,
             {$push: {clientes: req.body}},
-            { new: true}
+            { new: true }
         );
-        res.status(201).json(viaje)
+        res.status(200).json(viaje)
+        console.log(viaje)
     }catch(error){
-        res.status(500).json({ message: error.message })
+        res.status(204).json({ message: error.message })
     }
 }
 
@@ -44,11 +56,13 @@ const updtViajeGastos = async (req, res) => {
     try{
         const viaje = await viajeService.updateViaje(
             req.params.id,
-            {gastos: req.body},
+            { $set: {gastos: req.body}},
+            { new: true }
         );
-        res.status(201).json(viaje)
+        res.status(200).json(viaje)
+        
     }catch(error){
-        res.status(500).json({ message: error.message })
+        res.status(204).json({ message: error.message })
     }
 }
 
